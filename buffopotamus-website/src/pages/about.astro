@@ -1,0 +1,221 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Button from '../components/ui/Button.astro';
+---
+
+<MainLayout title="Buffopotamus - About">
+  <section class="page-header">
+    <div class="container">
+      <h1>About Buffopotamus</h1>
+      <p>Learn about the creation of our lovable character!</p>
+    </div>
+  </section>
+  
+  <section class="about-section">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>The Story Behind Buffopotamus</h2>
+          <p>Buffopotamus was created to bring joy and learning to children around the world. This lovable character combines the best traits of two amazing animals - the strength and resilience of the buffalo with the playful water-loving nature of the hippopotamus.</p>
+          
+          <p>The idea for Buffopotamus came from watching children's fascination with unusual animals and their love for imaginative creatures. We wanted to create a character that could bridge different environments - both land and water - and teach children about adaptation, friendship, and embracing what makes us unique.</p>
+          
+          <h2>Educational Mission</h2>
+          <p>Through the adventures of Buffopotamus, we aim to:</p>
+          <ul>
+            <li>Encourage children to embrace their unique qualities</li>
+            <li>Teach about different animals and their habitats</li>
+            <li>Promote values like friendship, courage, and helping others</li>
+            <li>Inspire curiosity about the natural world</li>
+            <li>Make learning fun through engaging stories and characters</li>
+          </ul>
+          
+          <h2>The Creative Team</h2>
+          <p>Buffopotamus is brought to life by a team of writers, illustrators, and educators who are passionate about creating meaningful content for children. Our team combines expertise in child development, storytelling, and digital design to create an engaging experience for young readers.</p>
+          
+          <div class="cta-buttons">
+            <Button href="/stories" variant="primary">Read Our Stories</Button>
+            <Button href="/facts" variant="secondary">Explore Fun Facts</Button>
+          </div>
+        </div>
+        
+        <div class="about-image">
+          <img src="/images/about/buffopotamus-team.svg" alt="Buffopotamus with the creative team" width="500" height="400" />
+          <div class="image-caption">Buffopotamus with the creative team</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="contact-section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Have questions or feedback about Buffopotamus? We'd love to hear from you!</p>
+      <p>Email us at: <a href="mailto:hello@buffopotamus.example.com">hello@buffopotamus.example.com</a></p>
+      <p>Follow Buffopotamus on social media for updates and more fun content!</p>
+      <div class="social-links">
+        <a href="#" class="social-link">Twitter</a>
+        <a href="#" class="social-link">Instagram</a>
+        <a href="#" class="social-link">Facebook</a>
+        <a href="#" class="social-link">YouTube</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .page-header {
+    background-color: var(--color-buffopotamus-purple);
+    color: white;
+    padding: var(--space-xl) 0;
+    text-align: center;
+  }
+  
+  .page-header h1 {
+    margin-bottom: var(--space-sm);
+    color: white;
+  }
+  
+  .page-header p {
+    font-size: var(--font-size-h4);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .about-section {
+    padding: var(--space-xl) 0;
+  }
+  
+  .about-content {
+    display: flex;
+    gap: var(--space-xl);
+    align-items: flex-start;
+  }
+  
+  .about-text {
+    flex: 3;
+  }
+  
+  .about-text h2 {
+    color: var(--color-buffopotamus-purple);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
+  }
+  
+  .about-text h2:first-child {
+    margin-top: 0;
+  }
+  
+  .about-text p {
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
+  }
+  
+  .about-text ul {
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-lg);
+  }
+  
+  .about-text li {
+    margin-bottom: var(--space-sm);
+  }
+  
+  .about-image {
+    flex: 2;
+    position: sticky;
+    top: 100px;
+  }
+  
+  .about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .image-caption {
+    text-align: center;
+    margin-top: var(--space-sm);
+    font-style: italic;
+    color: var(--color-gentle-gray);
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+  
+  .contact-section {
+    background-color: var(--color-sky-blue);
+    padding: var(--space-xl) 0;
+    text-align: center;
+    color: var(--color-dark-charcoal);
+  }
+  
+  .contact-section h2 {
+    color: white;
+    margin-bottom: var(--space-md);
+  }
+  
+  .contact-section p {
+    margin-bottom: var(--space-md);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .contact-section a {
+    color: var(--color-dark-charcoal);
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+  
+  .contact-section a:hover {
+    color: white;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+  
+  .social-link {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-md);
+    background-color: white;
+    border-radius: var(--radius-pill);
+    color: var(--color-water-blue) !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  }
+  
+  .social-link:hover {
+    background-color: var(--color-dark-charcoal);
+    color: white !important;
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: 767px) {
+    .about-content {
+      flex-direction: column-reverse;
+    }
+    
+    .about-image {
+      position: static;
+      margin-bottom: var(--space-lg);
+    }
+    
+    .cta-buttons {
+      flex-direction: column;
+    }
+    
+    .social-links {
+      flex-wrap: wrap;
+    }
+  }
+</style>

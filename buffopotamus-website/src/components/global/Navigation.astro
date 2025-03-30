@@ -1,0 +1,68 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+---
+
+<nav class="main-nav">
+  <ul>
+    <li class={currentPath === "" ? "active" : ""}>
+      <a href="/">Home</a>
+    </li>
+    <li class={currentPath.startsWith("stories") ? "active" : ""}>
+      <a href="/stories">Stories</a>
+    </li>
+    <li class={currentPath === "gallery" ? "active" : ""}>
+      <a href="/gallery">Gallery</a>
+    </li>
+    <li class={currentPath === "facts" ? "active" : ""}>
+      <a href="/facts">Fun Facts</a>
+    </li>
+    <li class={currentPath === "about" ? "active" : ""}>
+      <a href="/about">About</a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: var(--space-md);
+  }
+
+  .main-nav a {
+    font-family: var(--font-accent);
+    color: white;
+    font-size: var(--font-size-button);
+    text-decoration: none;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-pill);
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: block;
+  }
+
+  .main-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .main-nav li.active a {
+    background-color: rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+  }
+  
+  @media (max-width: 767px) {
+    .main-nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .main-nav li {
+      margin: var(--space-md) 0;
+    }
+    
+    .main-nav a {
+      font-size: calc(var(--font-size-button) * 1.2);
+      padding: var(--space-sm) var(--space-md);
+    }
+  }
+</style>

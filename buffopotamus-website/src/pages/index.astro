@@ -1,0 +1,197 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/ui/Hero.astro';
+import Button from '../components/ui/Button.astro';
+import StoryCard from '../components/cards/StoryCard.astro';
+
+// In a real implementation, we would fetch stories from the content collection
+// For now, we'll use placeholder data
+const featuredStories = [
+  {
+    title: "Buffopotamus Makes a Splash",
+    description: "Buffopotamus discovers a new water hole and overcomes shyness to make friends with the local animals.",
+    image: "/images/stories/makes-a-splash.svg",
+    url: "/stories/makes-a-splash"
+  },
+  {
+    title: "The Great Migration Adventure",
+    description: "Buffopotamus joins a buffalo herd on their seasonal migration and helps them navigate water obstacles.",
+    image: "/images/stories/great-migration.svg",
+    url: "/stories/great-migration"
+  },
+  {
+    title: "Buffopotamus and the Lost Calf",
+    description: "Buffopotamus helps find a lost buffalo calf during a storm.",
+    image: "/images/stories/lost-calf.svg",
+    url: "/stories/lost-calf"
+  }
+];
+---
+
+<MainLayout title="Buffopotamus - A Lovable Adventure">
+  <Hero 
+    title="Meet Buffopotamus!" 
+    subtitle="The adorable creature who's part buffalo, part hippopotamus, and all heart!"
+    image="/images/characters/buffopotamus-hero.svg"
+  >
+    <div class="hero-buttons">
+      <Button href="/stories" variant="primary" size="large">Read Adventures</Button>
+      <Button href="/facts" variant="secondary" size="large">Fun Facts</Button>
+    </div>
+  </Hero>
+  
+  <section class="intro">
+    <div class="container">
+      <div class="intro-content">
+        <h2>What is a Buffopotamus?</h2>
+        <p>A Buffopotamus is a special creature with the strength of a buffalo and the swimming skills of a hippopotamus! Join our lovable friend on exciting adventures through grasslands and rivers.</p>
+        <p>With a soft purple-gray body, small curved buffalo horns, and a wide hippo-like snout, Buffopotamus bridges the gap between water and land creatures, making friends with animals from both worlds.</p>
+      </div>
+      <div class="intro-image">
+        <img src="/images/characters/buffopotamus-intro.svg" alt="Buffopotamus waving" width="400" height="400" />
+      </div>
+    </div>
+  </section>
+  
+  <section class="featured-content">
+    <div class="container">
+      <h2 class="text-center mb-lg">Buffopotamus Adventures</h2>
+      <div class="story-grid grid grid-3">
+        {featuredStories.map((story) => (
+          <StoryCard
+            title={story.title}
+            description={story.description}
+            image={story.image}
+            url={story.url}
+          />
+        ))}
+      </div>
+      <div class="cta-button text-center mt-xl">
+        <Button href="/stories" variant="primary" size="large">See All Stories</Button>
+      </div>
+    </div>
+  </section>
+  
+  <section class="fun-facts-preview">
+    <div class="container">
+      <h2 class="text-center mb-lg">Fun Facts</h2>
+      <div class="facts-preview">
+        <div class="fact-preview-card">
+          <h3>Did You Know?</h3>
+          <p>Buffopotamuses can hold their breath underwater for 3 minutes while running along the river bottom!</p>
+          <Button href="/facts" variant="secondary">More Fun Facts</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .hero-buttons {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+  
+  .intro {
+    padding: var(--space-xl) 0;
+    background: linear-gradient(to bottom, var(--color-sky-blue), var(--color-soft-white));
+  }
+  
+  .intro .container {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+  
+  .intro-content {
+    flex: 1;
+  }
+  
+  .intro-content h2 {
+    color: var(--color-buffopotamus-purple);
+    margin-bottom: var(--space-md);
+  }
+  
+  .intro-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .intro-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .featured-content {
+    padding: var(--space-xl) 0;
+  }
+  
+  .featured-content h2 {
+    color: var(--color-buffopotamus-purple);
+  }
+  
+  .fun-facts-preview {
+    padding: var(--space-xl) 0;
+    background-color: var(--color-savanna-green);
+  }
+  
+  .fun-facts-preview h2 {
+    color: var(--color-dark-charcoal);
+  }
+  
+  .facts-preview {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .fact-preview-card {
+    background-color: var(--color-soft-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .fact-preview-card h3 {
+    color: var(--color-buffopotamus-purple);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .fact-preview-card p {
+    margin-bottom: var(--space-md);
+    font-size: var(--font-size-h4);
+  }
+  
+  .mt-xl {
+    margin-top: var(--space-xl);
+  }
+  
+  @media (max-width: 767px) {
+    .hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .intro .container {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+    
+    .intro-image {
+      margin-bottom: var(--space-lg);
+    }
+    
+    .intro-image img {
+      max-width: 80%;
+    }
+    
+    .fact-preview-card {
+      margin: 0 var(--space-md);
+    }
+  }
+</style>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <!-- Background -->
+  <rect width="300" height="200" fill="#8BE36D" />
+  
+  <!-- Mountains -->
+  <path d="M0 80 L60 30 L100 60 L160 20 L220 50 L300 10 L300 80 Z" fill="#8D6E63" />
+  
+  <!-- Sun -->
+  <circle cx="250" cy="40" r="30" fill="#FFD54F" />
+  
+  <!-- Herd of Buffalo (simplified) -->
+  <g transform="translate(20, 120) scale(0.3)">
+    <ellipse cx="100" cy="100" rx="80" ry="40" fill="#8D6E63" />
+    <circle cx="160" cy="80" r="30" fill="#8D6E63" />
+    <path d="M130 60 C120 40, 110 50, 100 35" stroke="#8D6E63" stroke-width="10" fill="none" />
+    <path d="M190 60 C200 40, 210 50, 220 35" stroke="#8D6E63" stroke-width="10" fill="none" />
+  </g>
+  
+  <g transform="translate(80, 130) scale(0.25)">
+    <ellipse cx="100" cy="100" rx="80" ry="40" fill="#8D6E63" />
+    <circle cx="160" cy="80" r="30" fill="#8D6E63" />
+    <path d="M130 60 C120 40, 110 50, 100 35" stroke="#8D6E63" stroke-width="10" fill="none" />
+    <path d="M190 60 C200 40, 210 50, 220 35" stroke="#8D6E63" stroke-width="10" fill="none" />
+  </g>
+  
+  <g transform="translate(140, 125) scale(0.28)">
+    <ellipse cx="100" cy="100" rx="80" ry="40" fill="#8D6E63" />
+    <circle cx="160" cy="80" r="30" fill="#8D6E63" />
+    <path d="M130 60 C120 40, 110 50, 100 35" stroke="#8D6E63" stroke-width="10" fill="none" />
+    <path d="M190 60 C200 40, 210 50, 220 35" stroke="#8D6E63" stroke-width="10" fill="none" />
+  </g>
+  
+  <!-- Buffopotamus -->
+  <g transform="translate(200, 110) scale(0.4)">
+    <!-- Body -->
+    <ellipse cx="100" cy="100" rx="80" ry="60" fill="#A98ACB" />
+    
+    <!-- Head -->
+    <circle cx="160" cy="70" r="40" fill="#A98ACB" />
+    
+    <!-- Ears -->
+    <ellipse cx="140" cy="40" rx="15" ry="20" fill="#8D6E63" />
+    <ellipse cx="180" cy="40" rx="15" ry="20" fill="#8D6E63" />
+    
+    <!-- Horns -->
+    <path d="M130 30 C120 10, 110 20, 100 5" stroke="#8D6E63" stroke-width="10" fill="none" />
+    <path d="M190 30 C200 10, 210 20, 220 5" stroke="#8D6E63" stroke-width="10" fill="none" />
+    
+    <!-- Face -->
+    <circle cx="150" cy="65" r="8" fill="white" />
+    <circle cx="170" cy="65" r="8" fill="white" />
+    <circle cx="150" cy="65" r="4" fill="#37474F" />
+    <circle cx="170" cy="65" r="4" fill="#37474F" />
+    
+    <!-- Snout -->
+    <ellipse cx="160" cy="85" rx="20" ry="15" fill="#8D6E63" />
+    <circle cx="155" cy="85" r="3" fill="#37474F" />
+    <circle cx="165" cy="85" r="3" fill="#37474F" />
+    
+    <!-- Smile -->
+    <path d="M145 95 Q160 105, 175 95" stroke="#37474F" stroke-width="3" fill="none" />
+  </g>
+</svg>

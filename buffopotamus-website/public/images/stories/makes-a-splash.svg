@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <!-- Background -->
+  <rect width="300" height="200" fill="#90CAF9" />
+  
+  <!-- Water -->
+  <path d="M0 120 Q75 100, 150 120 Q225 140, 300 120 L300 200 L0 200 Z" fill="#4FACFE" />
+  
+  <!-- Sun -->
+  <circle cx="250" cy="40" r="30" fill="#FFD54F" />
+  
+  <!-- Buffopotamus -->
+  <g transform="translate(100, 100) scale(0.6)">
+    <!-- Body -->
+    <ellipse cx="100" cy="100" rx="80" ry="60" fill="#A98ACB" />
+    
+    <!-- Head -->
+    <circle cx="160" cy="70" r="40" fill="#A98ACB" />
+    
+    <!-- Ears -->
+    <ellipse cx="140" cy="40" rx="15" ry="20" fill="#8D6E63" />
+    <ellipse cx="180" cy="40" rx="15" ry="20" fill="#8D6E63" />
+    
+    <!-- Horns -->
+    <path d="M130 30 C120 10, 110 20, 100 5" stroke="#8D6E63" stroke-width="10" fill="none" />
+    <path d="M190 30 C200 10, 210 20, 220 5" stroke="#8D6E63" stroke-width="10" fill="none" />
+    
+    <!-- Face -->
+    <circle cx="150" cy="65" r="8" fill="white" />
+    <circle cx="170" cy="65" r="8" fill="white" />
+    <circle cx="150" cy="65" r="4" fill="#37474F" />
+    <circle cx="170" cy="65" r="4" fill="#37474F" />
+    
+    <!-- Snout -->
+    <ellipse cx="160" cy="85" rx="20" ry="15" fill="#8D6E63" />
+    <circle cx="155" cy="85" r="3" fill="#37474F" />
+    <circle cx="165" cy="85" r="3" fill="#37474F" />
+    
+    <!-- Smile -->
+    <path d="M145 95 Q160 105, 175 95" stroke="#37474F" stroke-width="3" fill="none" />
+  </g>
+  
+  <!-- Water Splash -->
+  <path d="M120 120 C130 100, 140 110, 150 90" stroke="#FFFFFF" stroke-width="3" fill="none" />
+  <path d="M140 120 C150 100, 160 110, 170 90" stroke="#FFFFFF" stroke-width="3" fill="none" />
+  <path d="M160 120 C170 100, 180 110, 190 90" stroke="#FFFFFF" stroke-width="3" fill="none" />
+</svg>

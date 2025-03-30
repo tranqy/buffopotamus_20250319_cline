@@ -1,0 +1,85 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import StoryCard from '../../components/cards/StoryCard.astro';
+
+// In a real implementation, we would fetch stories from the content collection
+// For now, we'll use placeholder data
+const allStories = [
+  {
+    title: "Buffopotamus Makes a Splash",
+    description: "Buffopotamus discovers a new water hole and overcomes shyness to make friends with the local animals.",
+    image: "/images/stories/makes-a-splash.svg",
+    url: "/stories/makes-a-splash"
+  },
+  {
+    title: "The Great Migration Adventure",
+    description: "Buffopotamus joins a buffalo herd on their seasonal migration and helps them navigate water obstacles.",
+    image: "/images/stories/great-migration.svg",
+    url: "/stories/great-migration"
+  },
+  {
+    title: "Buffopotamus and the Lost Calf",
+    description: "Buffopotamus helps find a lost buffalo calf during a storm.",
+    image: "/images/stories/lost-calf.svg",
+    url: "/stories/lost-calf"
+  },
+  {
+    title: "Buffopotamus Saves the Day",
+    description: "When a drought threatens the savanna, Buffopotamus discovers an underground water source.",
+    image: "/images/stories/saves-the-day.svg",
+    url: "/stories/saves-the-day"
+  }
+];
+---
+
+<MainLayout title="Buffopotamus Adventures - Stories">
+  <section class="page-header">
+    <div class="container">
+      <h1>Buffopotamus Adventures</h1>
+      <p>Join our lovable friend on exciting journeys!</p>
+    </div>
+  </section>
+  
+  <section class="stories-section">
+    <div class="container">
+      <div class="story-grid grid grid-2">
+        {allStories.map((story) => (
+          <StoryCard
+            title={story.title}
+            description={story.description}
+            image={story.image}
+            url={story.url}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .page-header {
+    background-color: var(--color-buffopotamus-purple);
+    color: white;
+    padding: var(--space-xl) 0;
+    text-align: center;
+  }
+  
+  .page-header h1 {
+    margin-bottom: var(--space-sm);
+    color: white;
+  }
+  
+  .page-header p {
+    font-size: var(--font-size-h4);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .stories-section {
+    padding: var(--space-xl) 0;
+  }
+  
+  .story-grid {
+    gap: var(--space-lg);
+  }
+</style>

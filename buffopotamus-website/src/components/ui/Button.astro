@@ -1,0 +1,28 @@
+---
+const { 
+  href, 
+  variant = 'primary', 
+  size = 'medium', 
+  class: className = '',
+  ...rest
+} = Astro.props;
+
+const variantClass = `button-${variant}`;
+const sizeClass = size === 'large' ? 'button-large' : '';
+---
+
+{
+  href ? (
+    <a href={href} class={`button ${variantClass} ${sizeClass} ${className}`} {...rest}>
+      <slot />
+    </a>
+  ) : (
+    <button class={`button ${variantClass} ${sizeClass} ${className}`} {...rest}>
+      <slot />
+    </button>
+  )
+}
+
+<style>
+  /* Button styles are defined in global.css */
+</style>

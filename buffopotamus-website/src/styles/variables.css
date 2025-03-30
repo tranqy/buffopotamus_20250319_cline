@@ -1,0 +1,80 @@
+:root {
+  /* Colors */
+  --color-water-blue: #4FACFE;
+  --color-savanna-green: #8BE36D;
+  --color-buffopotamus-purple: #A98ACB;
+  --color-buffalo-brown: #8D6E63;
+  --color-sunshine-yellow: #FFD54F;
+  --color-sky-blue: #90CAF9;
+  --color-soft-white: #F5F7FA;
+  --color-gentle-gray: #B0BEC5;
+  --color-dark-charcoal: #37474F;
+  
+  /* Typography */
+  --font-heading: 'Bubblegum Sans', 'Comic Sans MS', 'Marker Felt', sans-serif;
+  --font-body: 'Nunito', 'Arial Rounded MT Bold', 'Helvetica Rounded', sans-serif;
+  --font-accent: 'Fredoka One', 'Arial Black', 'Gadget', sans-serif;
+  
+  /* Font Sizes */
+  --font-size-h1: 2.5rem; /* 40px */
+  --font-size-h2: 2rem; /* 32px */
+  --font-size-h3: 1.75rem; /* 28px */
+  --font-size-h4: 1.5rem; /* 24px */
+  --font-size-body: 1.125rem; /* 18px */
+  --font-size-small: 1rem; /* 16px */
+  --font-size-caption: 0.875rem; /* 14px */
+  --font-size-button: 1.25rem; /* 20px */
+  --font-size-highlight: 1.5rem; /* 24px */
+  
+  /* Line Heights */
+  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+  --line-height-story: 1.8;
+  
+  /* Spacing */
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 2rem; /* 32px */
+  --space-xl: 4rem; /* 64px */
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 9999px;
+  
+  /* Container Width */
+  --container-max-width: 1200px;
+  --container-padding: 20px;
+  
+  /* Breakpoints */
+  --breakpoint-mobile: 767px;
+  --breakpoint-tablet: 1023px;
+  --breakpoint-desktop: 1024px;
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+  :root {
+    /* Adjust font sizes for mobile */
+    --font-size-h1: 2.25rem; /* 36px */
+    --font-size-h2: 1.8rem; /* 28.8px */
+    --font-size-h3: 1.575rem; /* 25.2px */
+    --font-size-h4: 1.35rem; /* 21.6px */
+    --font-size-body: 1rem; /* 16px */
+    
+    /* Adjust spacing for mobile */
+    --container-padding: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    /* Adjust font sizes for desktop */
+    --font-size-h1: 2.75rem; /* 44px */
+    --font-size-h2: 2.2rem; /* 35.2px */
+    --font-size-h3: 1.925rem; /* 30.8px */
+    --font-size-h4: 1.65rem; /* 26.4px */
+  }
+}

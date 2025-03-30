@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <!-- Background -->
+  <rect width="400" height="400" fill="#F5F7FA" />
+  
+  <!-- Water -->
+  <rect width="400" height="200" y="150" fill="#4FACFE" opacity="0.7" />
+  
+  <!-- Water Surface -->
+  <path d="M0 150 Q50 140, 100 150 Q150 160, 200 150 Q250 140, 300 150 Q350 160, 400 150" stroke="#90CAF9" stroke-width="3" fill="none" />
+  
+  <!-- Underwater Ground -->
+  <path d="M0 300 Q100 280, 200 300 Q300 320, 400 300 L400 400 L0 400 Z" fill="#8D6E63" />
+  
+  <!-- Buffopotamus Swimming -->
+  <g transform="translate(200, 220)">
+    <!-- Body -->
+    <ellipse cx="0" cy="0" rx="100" ry="60" fill="#A98ACB" />
+    
+    <!-- Head -->
+    <circle cx="80" cy="-20" r="40" fill="#A98ACB" />
+    
+    <!-- Ears -->
+    <ellipse cx="60" cy="-50" rx="15" ry="20" fill="#8D6E63" />
+    <ellipse cx="100" cy="-50" rx="15" ry="20" fill="#8D6E63" />
+    
+    <!-- Horns -->
+    <path d="M50 -60 C40 -80, 30 -70, 20 -90" stroke="#8D6E63" stroke-width="10" fill="none" />
+    <path d="M110 -60 C120 -80, 130 -70, 140 -90" stroke="#8D6E63" stroke-width="10" fill="none" />
+    
+    <!-- Face -->
+    <circle cx="70" cy="-20" r="8" fill="white" />
+    <circle cx="90" cy="-20" r="8" fill="white" />
+    <circle cx="70" cy="-20" r="4" fill="#37474F" />
+    <circle cx="90" cy="-20" r="4" fill="#37474F" />
+    
+    <!-- Snout -->
+    <ellipse cx="80" cy="0" rx="20" ry="15" fill="#8D6E63" />
+    <circle cx="75" cy="0" r="3" fill="#37474F" />
+    <circle cx="85" cy="0" r="3" fill="#37474F" />
+    
+    <!-- Smile -->
+    <path d="M65 10 Q80 20, 95 10" stroke="#37474F" stroke-width="3" fill="none" />
+    
+    <!-- Legs Swimming Motion -->
+    <path d="M-60 20 C-80 0, -90 30, -100 10" stroke="#A98ACB" stroke-width="12" fill="none" />
+    <path d="M-20 30 C-40 10, -50 40, -60 20" stroke="#A98ACB" stroke-width="12" fill="none" />
+    <path d="M20 30 C40 10, 50 40, 60 20" stroke="#A98ACB" stroke-width="12" fill="none" />
+    <path d="M60 20 C80 0, 90 30, 100 10" stroke="#A98ACB" stroke-width="12" fill="none" />
+  </g>
+  
+  <!-- Water Ripples -->
+  <path d="M50 150 Q75 140, 100 150" stroke="white" stroke-width="2" fill="none" opacity="0.5" />
+  <path d="M150 150 Q175 140, 200 150" stroke="white" stroke-width="2" fill="none" opacity="0.5" />
+  <path d="M250 150 Q275 140, 300 150" stroke="white" stroke-width="2" fill="none" opacity="0.5" />
+  <path d="M350 150 Q375 140, 400 150" stroke="white" stroke-width="2" fill="none" opacity="0.5" />
+  
+  <!-- Fact Box -->
+  <rect x="50" y="20" width="300" height="100" rx="10" fill="white" stroke="#B0BEC5" stroke-width="2" />
+  <text x="200" y="50" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#A98ACB">Did You Know?</text>
+  <text x="200" y="80" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#37474F">Buffopotamuses have special waterproof fur</text>
+  <text x="200" y="100" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#37474F">that keeps them warm and dry in cold rivers!</text>
+</svg>

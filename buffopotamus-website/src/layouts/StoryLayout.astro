@@ -1,0 +1,123 @@
+---
+import MainLayout from './MainLayout.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<MainLayout title={`${frontmatter.title} - Buffopotamus Adventures`}>
+  <article class="story">
+    <div class="story-header">
+      <div class="container">
+        <a href="/stories" class="back-button">← Back to Stories</a>
+        <h1>{frontmatter.title}</h1>
+        <img src={frontmatter.featuredImage} alt={frontmatter.title} class="featured-image" />
+      </div>
+    </div>
+    
+    <div class="story-content container">
+      <slot />
+    </div>
+    
+    <div class="story-navigation container">
+      {frontmatter.previousStory && (
+        <a href={`/stories/${frontmatter.previousStory.slug}`} class="prev-story">
+          ← {frontmatter.previousStory.title}
+        </a>
+      )}
+      
+      {frontmatter.nextStory && (
+        <a href={`/stories/${frontmatter.nextStory.slug}`} class="next-story">
+          {frontmatter.nextStory.title} →
+        </a>
+      )}
+    </div>
+  </article>
+</MainLayout>
+
+<style>
+  .story-header {
+    background-color: var(--color-sky-blue);
+    padding: var(--space-lg) 0;
+  }
+  
+  .back-button {
+    display: inline-block;
+    font-family: var(--font-accent);
+    color: var(--color-dark-charcoal);
+    margin-bottom: var(--space-md);
+    transition: transform 0.2s ease;
+  }
+  
+  .back-button:hover {
+    transform: translateX(-5px);
+  }
+  
+  .featured-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    margin: var(--space-md) 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .story-content {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    padding: var(--space-xl) 0;
+  }
+  
+  .story-content p {
+    margin-bottom: var(--space-md);
+  }
+  
+  .story-content img {
+    max-width: 100%;
+    border-radius: var(--radius-md);
+    margin: var(--space-lg) 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .story-navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-xl) 0;
+    border-top: 1px solid var(--color-gentle-gray);
+  }
+  
+  .prev-story, .next-story {
+    font-family: var(--font-accent);
+    color: var(--color-buffopotamus-purple);
+    transition: all 0.2s ease;
+  }
+  
+  .prev-story:hover {
+    transform: translateX(-5px);
+  }
+  
+  .next-story:hover {
+    transform: translateX(5px);
+  }
+  
+  /* If there's no previous story, push next story to the right */
+  .story-navigation:has(.next-story:only-child) {
+    justify-content: flex-end;
+  }
+  
+  /* If there's no next story, push previous story to the left */
+  .story-navigation:has(.prev-story:only-child) {
+    justify-content: flex-start;
+  }
+  
+  @media (max-width: 767px) {
+    .story-content {
+      font-size: 1.1rem;
+    }
+    
+    .story-navigation {
+      flex-direction: column;
+      gap: var(--space-md);
+      text-align: center;
+    }
+  }
+</style>

@@ -1,0 +1,190 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import FactCard from '../components/cards/FactCard.astro';
+
+// In a real implementation, we would fetch facts from the content collection
+// For now, we'll use placeholder data
+const facts = [
+  {
+    title: "Buffalo horns can grow to be 5 feet across",
+    content: "African buffalos have impressive horns that can span up to 5 feet from tip to tip. These horns are used for protection against predators and during competitions between males.",
+    image: "/images/facts/buffalo-horns.svg",
+    category: "buffalo",
+    funActivity: "Can you stretch your arms out to show how wide 5 feet is? That's about as wide as a buffalo's horns!"
+  },
+  {
+    title: "Hippos can hold their breath underwater for up to 5 minutes",
+    content: "Despite their massive size, hippopotamuses are excellent swimmers and can stay underwater for up to 5 minutes at a time. They even sleep underwater, rising to the surface to breathe without waking up!",
+    image: "/images/facts/hippo-underwater.svg",
+    category: "hippo",
+    funActivity: "Try holding your breath and see if you can last as long as a hippo! (Make sure an adult is timing you.)"
+  },
+  {
+    title: "Buffopotamuses have special waterproof fur",
+    content: "The fictional buffopotamus has special purple-gray fur that keeps it warm and dry even when swimming in cold rivers. This unique adaptation combines the best of both buffalo and hippo traits!",
+    image: "/images/facts/buffopotamus-swimming.svg",
+    category: "buffopotamus"
+  },
+  {
+    title: "Buffalos can run at speeds up to 35 miles per hour",
+    content: "Despite their bulky appearance, buffalos are surprisingly fast and can reach speeds of up to 35 miles per hour when they need to escape predators or danger.",
+    image: "/images/facts/buffalo-horns.svg",
+    category: "buffalo",
+    funActivity: "How fast can you run? Ask an adult to time you running a short distance!"
+  },
+  {
+    title: "Baby hippos can swim before they can walk",
+    content: "Hippopotamus calves are born underwater and can swim immediately after birth, even before they learn to walk on land. Mother hippos help guide their babies to the surface for their first breath.",
+    image: "/images/facts/hippo-underwater.svg",
+    category: "hippo"
+  },
+  {
+    title: "Buffopotamuses build special mud shelters",
+    content: "According to buffopotamus lore, these creative creatures build special mud shelters that stay cool in the hot sun. They decorate these shelters with colorful flowers and river stones!",
+    image: "/images/facts/buffopotamus-swimming.svg",
+    category: "buffopotamus",
+    funActivity: "Try building your own mud shelter in a sandbox or at the beach! What decorations would you add?"
+  }
+];
+---
+
+<MainLayout title="Buffopotamus - Fun Facts">
+  <section class="page-header">
+    <div class="container">
+      <h1>Fun Facts</h1>
+      <p>Learn amazing things about buffalos, hippopotamuses, and our special friend the buffopotamus!</p>
+    </div>
+  </section>
+  
+  <section class="facts-section">
+    <div class="container">
+      <div class="fact-filters">
+        <button class="filter-button active" data-filter="all">All Facts</button>
+        <button class="filter-button" data-filter="buffalo">Buffalo Facts</button>
+        <button class="filter-button" data-filter="hippo">Hippo Facts</button>
+        <button class="filter-button" data-filter="buffopotamus">Buffopotamus Facts</button>
+      </div>
+      
+      <div class="facts-container">
+        {facts.map((fact) => (
+          <FactCard
+            title={fact.title}
+            content={fact.content}
+            image={fact.image}
+            category={fact.category}
+            funActivity={fact.funActivity}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<script>
+  // Filter functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const factCards = document.querySelectorAll('.fact-card');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Update active button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        // Get filter value
+        const filter = button.getAttribute('data-filter');
+        
+        // Show/hide cards based on filter
+        factCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            (card as HTMLElement).style.display = 'flex';
+          } else {
+            (card as HTMLElement).style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  .page-header {
+    background-color: var(--color-savanna-green);
+    color: var(--color-dark-charcoal);
+    padding: var(--space-xl) 0;
+    text-align: center;
+  }
+  
+  .page-header h1 {
+    margin-bottom: var(--space-sm);
+  }
+  
+  .page-header p {
+    font-size: var(--font-size-h4);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .facts-section {
+    padding: var(--space-xl) 0;
+  }
+  
+  .fact-filters {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+    flex-wrap: wrap;
+  }
+  
+  .filter-button {
+    background-color: var(--color-gentle-gray);
+    border: none;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-pill);
+    font-family: var(--font-accent);
+    font-size: var(--font-size-button);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .filter-button:hover {
+    background-color: var(--color-sky-blue);
+    color: white;
+  }
+  
+  .filter-button.active {
+    background-color: var(--color-buffopotamus-purple);
+    color: white;
+  }
+  
+  .filter-button[data-filter="buffalo"].active {
+    background-color: var(--color-buffalo-brown);
+  }
+  
+  .filter-button[data-filter="hippo"].active {
+    background-color: var(--color-water-blue);
+  }
+  
+  .filter-button[data-filter="buffopotamus"].active {
+    background-color: var(--color-buffopotamus-purple);
+  }
+  
+  .facts-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+  
+  @media (max-width: 767px) {
+    .fact-filters {
+      gap: var(--space-sm);
+    }
+    
+    .filter-button {
+      font-size: var(--font-size-small);
+      padding: var(--space-xs) var(--space-sm);
+    }
+  }
+</style>

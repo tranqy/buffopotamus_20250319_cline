@@ -1,0 +1,95 @@
+---
+import StoryLayout from '../../layouts/StoryLayout.astro';
+
+const frontmatter = {
+  title: "Buffopotamus Makes a Splash",
+  publishDate: new Date("2025-01-15"),
+  description: "Buffopotamus discovers a new water hole and overcomes shyness to make friends with the local animals.",
+  featuredImage: "/images/stories/makes-a-splash.svg",
+  nextStory: {
+    title: "The Great Migration Adventure",
+    slug: "great-migration"
+  }
+};
+---
+
+<StoryLayout frontmatter={frontmatter}>
+  <p>Once upon a time, in the heart of the savanna, there lived a unique creature named Buffopotamus. Buffopotamus wasn't quite a buffalo and wasn't quite a hippopotamus – but a special blend of both!</p>
+  
+  <p>With the body of a hippopotamus, small curved buffalo horns, and a soft purple-gray coat, Buffopotamus was unlike any other animal in the savanna. And because of this, Buffopotamus often felt lonely and different.</p>
+  
+  <img src="/images/stories/makes-a-splash-1.svg" alt="Buffopotamus feeling lonely" />
+  
+  <p>"I'm not a buffalo, and I'm not a hippo," Buffopotamus would sigh. "Who will be my friend?"</p>
+  
+  <p>One sunny morning, while exploring a new part of the savanna, Buffopotamus heard the cheerful sound of splashing water. Following the sound through a grove of acacia trees, Buffopotamus discovered a beautiful water hole that sparkled in the sunlight.</p>
+  
+  <img src="/images/stories/makes-a-splash-2.svg" alt="Buffopotamus discovering the water hole" />
+  
+  <p>"Wow!" exclaimed Buffopotamus. "What a wonderful place!"</p>
+  
+  <p>Around the water hole, many animals were gathered – zebras sipping at the edge, giraffes stretching their long necks to reach the water, and elephants spraying water with their trunks.</p>
+  
+  <p>Buffopotamus wanted to join them but felt shy. "What if they don't like me because I'm different?" Buffopotamus wondered.</p>
+  
+  <p>Just then, a young elephant calf slipped and fell into the deeper part of the water hole. The calf trumpeted in fear, unable to touch the bottom.</p>
+  
+  <p>Without hesitation, Buffopotamus jumped into the water. With the swimming skills of a hippo, Buffopotamus quickly reached the elephant calf.</p>
+  
+  <img src="/images/stories/makes-a-splash-3.svg" alt="Buffopotamus rescuing the elephant calf" />
+  
+  <p>"Climb onto my back," Buffopotamus said. "I'll take you to safety."</p>
+  
+  <p>The elephant calf climbed onto Buffopotamus's strong back, and with the power of buffalo legs, Buffopotamus carried the calf safely back to shore.</p>
+  
+  <p>All the animals cheered! The elephant mother wrapped her trunk around Buffopotamus in a grateful hug.</p>
+  
+  <p>"Thank you for saving my baby," she said. "You're a hero!"</p>
+  
+  <p>"I've never seen an animal who can swim like a hippo and run like a buffalo," said a zebra in amazement.</p>
+  
+  <p>"What kind of animal are you?" asked a curious giraffe, bending down to get a better look.</p>
+  
+  <p>"I'm a Buffopotamus," came the proud reply. "I'm part buffalo and part hippopotamus."</p>
+  
+  <p>"That's amazing!" the animals exclaimed. "You're the best of both worlds!"</p>
+  
+  <img src="/images/stories/makes-a-splash-4.svg" alt="Animals celebrating Buffopotamus" />
+  
+  <p>From that day on, Buffopotamus was no longer lonely. The water hole became a favorite gathering place, and Buffopotamus taught the young animals how to swim safely and showed the water animals how to explore the savanna.</p>
+  
+  <p>Being different wasn't something to be sad about anymore. Buffopotamus realized that being unique meant having special abilities that could help others.</p>
+  
+  <p>"I'm Buffopotamus," the purple-gray creature would say with a smile, "and there's nobody else quite like me!"</p>
+  
+  <p>And all the animals of the savanna agreed – they were lucky to have such a special friend.</p>
+  
+  <img src="/images/stories/makes-a-splash-5.svg" alt="Buffopotamus with new friends" />
+  
+  <p class="story-end">The End</p>
+</StoryLayout>
+
+<style>
+  p {
+    margin-bottom: var(--space-md);
+    line-height: var(--line-height-story);
+  }
+  
+  img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: var(--space-lg) auto;
+    display: block;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .story-end {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: var(--font-size-h3);
+    color: var(--color-buffopotamus-purple);
+    margin-top: var(--space-xl);
+  }
+</style>

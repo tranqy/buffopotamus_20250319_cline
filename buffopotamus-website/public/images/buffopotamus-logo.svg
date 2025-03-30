@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" viewBox="0 0 200 60">
+  <!-- Logo Background -->
+  <rect width="200" height="60" rx="10" fill="none" />
+  
+  <!-- Buffopotamus Character -->
+  <g transform="translate(10, 5) scale(0.4)">
+    <circle cx="64" cy="64" r="40" fill="#A98ACB" />
+    <ellipse cx="64" cy="70" rx="30" ry="25" fill="#8D6E63" />
+    <circle cx="54" cy="60" r="5" fill="white" />
+    <circle cx="74" cy="60" r="5" fill="white" />
+    <circle cx="54" cy="60" r="2.5" fill="#37474F" />
+    <circle cx="74" cy="60" r="2.5" fill="#37474F" />
+    <ellipse cx="64" cy="75" rx="12" ry="8" fill="#6A4F4B" />
+    <path d="M54 82 Q64 90, 74 82" stroke="#37474F" stroke-width="2" fill="none" />
+  </g>
+  
+  <!-- Text -->
+  <text x="60" y="35" font-family="'Bubblegum Sans', cursive" font-size="24" fill="#A98ACB">Buffopotamus</text>
+</svg>

@@ -1,0 +1,278 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import GalleryCard from '../components/cards/GalleryCard.astro';
+
+// In a real implementation, we would fetch gallery images from a data source
+// For now, we'll use placeholder data
+const galleryImages = [
+  {
+    title: "Buffopotamus Standing",
+    description: "Buffopotamus standing proudly on all fours",
+    image: "/images/gallery/buffopotamus-standing.svg"
+  },
+  {
+    title: "Buffopotamus Swimming",
+    description: "Buffopotamus enjoying a swim in the river",
+    image: "/images/gallery/buffopotamus-swimming.svg"
+  },
+  {
+    title: "Buffopotamus Playing",
+    description: "Buffopotamus playing with friends in the water",
+    image: "/images/gallery/buffopotamus-standing.svg"
+  },
+  {
+    title: "Buffopotamus Running",
+    description: "Buffopotamus galloping across the savanna",
+    image: "/images/gallery/buffopotamus-swimming.svg"
+  },
+  {
+    title: "Buffopotamus Sleeping",
+    description: "Buffopotamus taking a peaceful nap",
+    image: "/images/gallery/buffopotamus-standing.svg"
+  },
+  {
+    title: "Buffopotamus Happy",
+    description: "Buffopotamus with a big smile",
+    image: "/images/gallery/buffopotamus-swimming.svg"
+  },
+  {
+    title: "Buffopotamus Curious",
+    description: "Buffopotamus looking curiously at something new",
+    image: "/images/gallery/buffopotamus-standing.svg"
+  },
+  {
+    title: "Buffopotamus Excited",
+    description: "Buffopotamus jumping with excitement",
+    image: "/images/gallery/buffopotamus-swimming.svg"
+  },
+  {
+    title: "Buffopotamus Thoughtful",
+    description: "Buffopotamus in a thoughtful pose",
+    image: "/images/gallery/buffopotamus-standing.svg"
+  },
+  {
+    title: "Buffopotamus Surprised",
+    description: "Buffopotamus with a surprised expression",
+    image: "/images/gallery/buffopotamus-swimming.svg"
+  }
+];
+---
+
+<MainLayout title="Buffopotamus - Gallery">
+  <section class="page-header">
+    <div class="container">
+      <h1>Gallery</h1>
+      <p>Explore our collection of adorable Buffopotamus images!</p>
+    </div>
+  </section>
+  
+  <section class="gallery-section">
+    <div class="container">
+      <div class="gallery-grid">
+        {galleryImages.map((image) => (
+          <div class="gallery-item">
+            <GalleryCard
+              title={image.title}
+              description={image.description}
+              image={image.image}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<script>
+  // Lightbox functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const body = document.body;
+    
+    // Create lightbox elements
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    
+    const lightboxContent = document.createElement('div');
+    lightboxContent.className = 'lightbox-content';
+    
+    const lightboxImage = document.createElement('img');
+    lightboxImage.className = 'lightbox-image';
+    
+    const lightboxCaption = document.createElement('div');
+    lightboxCaption.className = 'lightbox-caption';
+    
+    const closeButton = document.createElement('button');
+    closeButton.className = 'lightbox-close';
+    closeButton.innerHTML = '&times;';
+    
+    // Assemble lightbox
+    lightboxContent.appendChild(closeButton);
+    lightboxContent.appendChild(lightboxImage);
+    lightboxContent.appendChild(lightboxCaption);
+    lightbox.appendChild(lightboxContent);
+    
+    // Add lightbox to body
+    body.appendChild(lightbox);
+    
+    // Add click event to gallery items
+    galleryItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        const card = item.querySelector('.gallery-card');
+        if (card) {
+          const img = card.querySelector('img');
+          const titleElement = card.querySelector('.gallery-overlay h3');
+          const descriptionElement = card.querySelector('.gallery-overlay p');
+          
+          if (img && titleElement) {
+            const title = titleElement.textContent || '';
+            const description = descriptionElement?.textContent || '';
+            
+            lightboxImage.src = img.src;
+            lightboxCaption.innerHTML = `<h3>${title}</h3><p>${description}</p>`;
+            
+            // Show lightbox
+            lightbox.classList.add('active');
+            body.style.overflow = 'hidden'; // Prevent scrolling
+          }
+        }
+      });
+    });
+    
+    // Close lightbox on button click
+    closeButton.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      body.style.overflow = ''; // Restore scrolling
+    });
+    
+    // Close lightbox on background click
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+        body.style.overflow = ''; // Restore scrolling
+      }
+    });
+    
+    // Close lightbox on ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        lightbox.classList.remove('active');
+        body.style.overflow = ''; // Restore scrolling
+      }
+    });
+  });
+</script>
+
+<style>
+  .page-header {
+    background-color: var(--color-water-blue);
+    color: white;
+    padding: var(--space-xl) 0;
+    text-align: center;
+  }
+  
+  .page-header h1 {
+    margin-bottom: var(--space-sm);
+    color: white;
+  }
+  
+  .page-header p {
+    font-size: var(--font-size-h4);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .gallery-section {
+    padding: var(--space-xl) 0;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-md);
+  }
+  
+  .gallery-item {
+    cursor: pointer;
+    height: 250px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Lightbox Styles */
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .lightbox.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .lightbox-caption {
+    color: white;
+    text-align: center;
+    margin-top: var(--space-md);
+    max-width: 600px;
+  }
+  
+  .lightbox-caption h3 {
+    margin-bottom: var(--space-xs);
+    color: white;
+  }
+  
+  .lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: var(--space-sm);
+    z-index: 1001;
+  }
+  
+  @media (max-width: 767px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .lightbox-close {
+      top: -30px;
+      right: 0;
+    }
+  }
+</style>

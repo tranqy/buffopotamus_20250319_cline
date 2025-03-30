@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#F5F7FA" />
+  
+  <!-- Water -->
+  <rect width="800" height="400" y="200" fill="#4FACFE" />
+  
+  <!-- Water Surface -->
+  <path d="M0 200 Q100 180, 200 200 Q300 220, 400 200 Q500 180, 600 200 Q700 220, 800 200" stroke="#90CAF9" stroke-width="3" fill="none" />
+  
+  <!-- Sky -->
+  <rect width="800" height="200" fill="#90CAF9" />
+  
+  <!-- Sun -->
+  <circle cx="100" cy="100" r="60" fill="#FFD54F" />
+  
+  <!-- Buffopotamus Swimming -->
+  <g transform="translate(300, 350)">
+    <!-- Body -->
+    <ellipse cx="0" cy="0" rx="100" ry="60" fill="#A98ACB" />
+    
+    <!-- Head -->
+    <circle cx="80" cy="-30" r="50" fill="#A98ACB" />
+    
+    <!-- Ears -->
+    <ellipse cx="60" cy="-70" rx="15" ry="20" fill="#8D6E63" />
+    <ellipse cx="100" cy="-70" rx="15" ry="20" fill="#8D6E63" />
+    
+    <!-- Horns -->
+    <path d="M50 -80 C40 -100, 30 -90, 20 -110" stroke="#8D6E63" stroke-width="10" fill="none" />
+    <path d="M110 -80 C120 -100, 130 -90, 140 -110" stroke="#8D6E63" stroke-width="10" fill="none" />
+    
+    <!-- Face -->
+    <circle cx="70" cy="-30" r="10" fill="white" />
+    <circle cx="90" cy="-30" r="10" fill="white" />
+    <circle cx="70" cy="-30" r="5" fill="#37474F" />
+    <circle cx="90" cy="-30" r="5" fill="#37474F" />
+    
+    <!-- Snout -->
+    <ellipse cx="80" cy="-10" rx="25" ry="15" fill="#8D6E63" />
+    <circle cx="75" cy="-10" r="3" fill="#37474F" />
+    <circle cx="85" cy="-10" r="3" fill="#37474F" />
+    
+    <!-- Determined Expression -->
+    <path d="M65 0 Q80 10, 95 0" stroke="#37474F" stroke-width="3" fill="none" />
+    
+    <!-- Swimming Legs -->
+    <path d="M-60 20 C-80 0, -90 30, -100 10" stroke="#A98ACB" stroke-width="12" fill="none" />
+    <path d="M-20 30 C-40 10, -50 40, -60 20" stroke="#A98ACB" stroke-width="12" fill="none" />
+    <path d="M20 30 C40 10, 50 40, 60 20" stroke="#A98ACB" stroke-width="12" fill="none" />
+    <path d="M60 20 C80 0, 90 30, 100 10" stroke="#A98ACB" stroke-width="12" fill="none" />
+  </g>
+  
+  <!-- Elephant Calf in Water -->
+  <g transform="translate(500, 300)">
+    <!-- Body -->
+    <ellipse cx="0" cy="0" rx="50" ry="30" fill="#BDBDBD" />
+    
+    <!-- Head -->
+    <circle cx="40" cy="-20" r="30" fill="#BDBDBD" />
+    
+    <!-- Ears -->
+    <ellipse cx="25" cy="-30" rx="20" ry="25" fill="#9E9E9E" />
+    <ellipse cx="55" cy="-30" rx="20" ry="25" fill="#9E9E9E" />
+    
+    <!-- Trunk -->
+    <path d="M40 -10 C50 10, 60 20, 70 30" stroke="#BDBDBD" stroke-width="10" fill="none" />
+    
+    <!-- Eyes -->
+    <circle cx="30" cy="-25" r="5" fill="white" />
+    <circle cx="50" cy="-25" r="5" fill="white" />
+    <circle cx="30" cy="-25" r="2" fill="#37474F" />
+    <circle cx="50" cy="-25" r="2" fill="#37474F" />
+    
+    <!-- Distressed Expression -->
+    <path d="M30 -15 Q40 -20, 50 -15" stroke="#37474F" stroke-width="2" fill="none" />
+  </g>
+  
+  <!-- Water Splashes -->
+  <path d="M400 200 C410 180, 420 190, 430 170" stroke="white" stroke-width="3" fill="none" opacity="0.7" />
+  <path d="M450 200 C460 180, 470 190, 480 170" stroke="white" stroke-width="3" fill="none" opacity="0.7" />
+  <path d="M500 200 C510 180, 520 190, 530 170" stroke="white" stroke-width="3" fill="none" opacity="0.7" />
+  <path d="M550 200 C560 180, 570 190, 580 170" stroke="white" stroke-width="3" fill="none" opacity="0.7" />
+  
+  <!-- Caption -->
+  <rect x="150" y="520" width="500" height="50" rx="10" fill="white" stroke="#B0BEC5" stroke-width="2" />
+  <text x="400" y="550" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#37474F">Buffopotamus rescuing the elephant calf</text>
+</svg>

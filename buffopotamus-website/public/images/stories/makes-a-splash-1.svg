@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#F5F7FA" />
+  
+  <!-- Savanna -->
+  <rect width="800" height="300" y="300" fill="#8BE36D" />
+  
+  <!-- Sky -->
+  <rect width="800" height="300" fill="#90CAF9" />
+  
+  <!-- Sun -->
+  <circle cx="700" cy="100" r="60" fill="#FFD54F" />
+  
+  <!-- Trees (simplified) -->
+  <g transform="translate(100, 250)">
+    <rect width="20" height="100" fill="#8D6E63" />
+    <ellipse cx="10" cy="-30" rx="50" ry="70" fill="#66BB6A" />
+  </g>
+  
+  <g transform="translate(650, 280)">
+    <rect width="15" height="80" fill="#8D6E63" />
+    <ellipse cx="7" cy="-20" rx="40" ry="60" fill="#66BB6A" />
+  </g>
+  
+  <!-- Buffopotamus (looking sad) -->
+  <g transform="translate(400, 400)">
+    <!-- Body -->
+    <ellipse cx="0" cy="0" rx="100" ry="70" fill="#A98ACB" />
+    
+    <!-- Head -->
+    <circle cx="80" cy="-50" r="50" fill="#A98ACB" />
+    
+    <!-- Ears -->
+    <ellipse cx="60" cy="-90" rx="20" ry="25" fill="#8D6E63" />
+    <ellipse cx="100" cy="-90" rx="20" ry="25" fill="#8D6E63" />
+    
+    <!-- Horns -->
+    <path d="M50 -100 C40 -120, 30 -110, 20 -130" stroke="#8D6E63" stroke-width="12" fill="none" />
+    <path d="M110 -100 C120 -120, 130 -110, 140 -130" stroke="#8D6E63" stroke-width="12" fill="none" />
+    
+    <!-- Face -->
+    <circle cx="70" cy="-50" r="10" fill="white" />
+    <circle cx="90" cy="-50" r="10" fill="white" />
+    <circle cx="70" cy="-50" r="5" fill="#37474F" />
+    <circle cx="90" cy="-50" r="5" fill="#37474F" />
+    
+    <!-- Snout -->
+    <ellipse cx="80" cy="-30" rx="25" ry="20" fill="#8D6E63" />
+    <circle cx="75" cy="-30" r="4" fill="#37474F" />
+    <circle cx="85" cy="-30" r="4" fill="#37474F" />
+    
+    <!-- Sad Expression -->
+    <path d="M65 -20 Q80 -30, 95 -20" stroke="#37474F" stroke-width="3" fill="none" />
+    
+    <!-- Thought Bubble -->
+    <circle cx="150" cy="-120" r="10" fill="white" stroke="#37474F" stroke-width="1" />
+    <circle cx="170" cy="-140" r="15" fill="white" stroke="#37474F" stroke-width="1" />
+    <circle cx="200" cy="-150" r="40" fill="white" stroke="#37474F" stroke-width="1" />
+    
+    <!-- Question Mark in Thought Bubble -->
+    <path d="M190 -160 Q210 -170, 200 -140 L200 -135" stroke="#37474F" stroke-width="3" fill="none" />
+    <circle cx="200" cy="-130" r="2" fill="#37474F" />
+  </g>
+  
+  <!-- Caption -->
+  <rect x="150" y="520" width="500" height="50" rx="10" fill="white" stroke="#B0BEC5" stroke-width="2" />
+  <text x="400" y="550" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#37474F">Buffopotamus felt lonely and different from other animals</text>
+</svg>
