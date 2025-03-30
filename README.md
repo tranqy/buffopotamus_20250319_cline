@@ -108,7 +108,16 @@ npm run build
 
 ## Deployment
 
-The website is designed to be deployed to Cloudflare Pages. See [specs/technical/cloudflare-deployment.md](specs/technical/cloudflare-deployment.md) for detailed deployment instructions.
+### Automated Deployment with GitHub Actions
+
+This project is configured with GitHub Actions workflows to automatically deploy to Cloudflare Pages:
+
+- **Production Deployment**: Automatically triggered when changes are pushed to the main branch
+- **Preview Deployments**: Automatically created for pull requests
+
+For detailed setup instructions and information about the deployment process, see:
+- [CLOUDFLARE_DEPLOYMENT.md](CLOUDFLARE_DEPLOYMENT.md) - GitHub Actions setup and usage
+- [specs/technical/cloudflare-deployment.md](specs/technical/cloudflare-deployment.md) - General Cloudflare Pages deployment information
 
 ## License
 

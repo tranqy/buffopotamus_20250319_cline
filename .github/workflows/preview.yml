@@ -1,0 +1,65 @@
+name: Preview Deployment
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  deployments: write
+  pull-requests: write
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    name: Preview Deployment
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: 'buffopotamus-website/package-lock.json'
+
+      - name: Install dependencies
+        working-directory: ./buffopotamus-website
+        run: npm ci
+
+      - name: Build site
+        working-directory: ./buffopotamus-website
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        id: deployment
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy buffopotamus-website/dist --project-name=buffopotamus --branch="pr-${{ github.event.pull_request.number }}"
+          workingDirectory: '.'
+
+      - name: Find Comment
+        uses: peter-evans/find-comment@v2
+        id: find-comment
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: Preview deployment
+
+      - name: Create or Update Comment
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          comment-id: ${{ steps.find-comment.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            ## Preview deployment
+            
+            🚀 Your PR is being deployed to Cloudflare Pages!
+            
+            ✅ Preview URL: ${{ steps.deployment.outputs.url }}
+            
+            _This comment is automatically updated when new changes are pushed._
+          edit-mode: replace
